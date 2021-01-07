@@ -22,6 +22,18 @@ abstract class Warrior extends LocalWarrior {
         $this->shield = 20; // Initialisation du bouclier à 20.
     }
 
+    public function setWeapon(Weapon $weapon)    // C'est la notion de TYPE de variable, ici le type d'un object c'est sa class d'objet
+                                                //, le type c'est genre int pour un chiffre, array pour un tableau, boolean pour vrai/faux
+                                                //en claire on met Weapon devant $weapon, car c'est le type de l'object donc ici c'est sa class d'objet
+    {
+        $this->weapon = $weapon;
+    }
+
+    public function setImageUrl($url)
+    {
+        $this->imageUrl = $url;
+    }
+
 };
 
 // Définissez vos class de combattants
@@ -33,9 +45,10 @@ class StartrekWarrior extends Warrior {
         return $this->mentalPower;
     }
 
-    public function __construct()
+    public function __construct($id)
     {
-
+        parent::__construct($id);
+        $this->mentalPower = 8; // Initialisation de la puissance mental à 8.
     }
 }
 class MarvelWarrior extends Warrior  {
@@ -46,9 +59,10 @@ class MarvelWarrior extends Warrior  {
         return $this->superPower;
     }
 
-    public function __construct()
+    public function __construct($id)
     {
-
+        parent::__construct($id);
+        $this->superPower = 100; // Initialisation du super pouvoir à 100.
     }
 }
 class PokemonWarrior extends Warrior  {
@@ -59,9 +73,27 @@ class PokemonWarrior extends Warrior  {
         return $this->level;
     }
 
-    public function __construct()
+    public function __construct($id)
     {
+        parent::__construct($id);
+        $this->level = 1; // Initialisation du niveau à 8.
+    }
+}
 
+class Weapon {
+    public $id;
+    public $strength;
+    public $imageUrl;
+
+    public function __construct($id, $strength)
+    {
+        $this->id = $id;
+        $this->strength = $strength;
+    }
+
+    public function setImageUrl($url)
+    {
+        $this->imageUrl = $url;
     }
 }
 
