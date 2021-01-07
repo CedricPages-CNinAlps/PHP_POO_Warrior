@@ -14,5 +14,4 @@
           $guerrier->setImageUrl('https://www.armoria.com/Files/23514/Img/18/Figurine-Guerrier-Viking-brandissant-sa-Hache-en-resine-aspect-bronze-vgr708.jpg');
           $guerrier->saveNew();
       }
-
   }
